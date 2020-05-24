@@ -17,7 +17,12 @@ public class Game extends Render {
     }
 
     public void update() {
-        checkCollision();
+        //checkCollision();
+
+        // dummy
+        if(frameCount % 60 == 0) {
+            render.addDrawable(player.addBodyPart());
+        }
     }
 
     public void render() {
