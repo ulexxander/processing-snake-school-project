@@ -15,6 +15,10 @@ public class Player {
         direction = Direction.DOWN;
     }
 
+    public void moveDirectional() {
+
+    }
+
     public BodyPart addBodyPart() {
         BodyPart last = bodyParts.get(bodyParts.size() - 1);
         int newTileX = 0;

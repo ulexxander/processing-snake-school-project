@@ -7,7 +7,16 @@ void setup() {
 }
 
 void draw() {
-    game.update();
+    if(frameCount % 30 == 0) {
+        game.update();
+    }
     game.render();
 }
- 
+
+void keyPressed() {
+    game.controller.pressKey(key);
+}
+
+void keyReleased() {
+    game.controller.releaseKey();
+}

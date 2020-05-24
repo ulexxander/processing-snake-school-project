@@ -9,6 +9,7 @@ public class Game {
     
     private Player player = new Player();
     private Render render = new Render();
+    private Controller controller = new Controller(player);
 
     public Game() {
         System.out.println("Game started!\n");
@@ -18,7 +19,7 @@ public class Game {
 
     public void update() {
         //checkCollision();
-
+        player.moveDirectional();
     }
 
     public void render() {
