@@ -12,7 +12,7 @@ public class Player {
         bodyParts.add(new BodyPart(Game.hTiles / 2, Game.vTiles / 2));
         head = bodyParts.get(0);
         //dummy
-        direction = Direction.RIGHT;
+        direction = Direction.DOWN;
     }
 
     public BodyPart addBodyPart() {
@@ -23,12 +23,12 @@ public class Player {
         switch(direction) {
             case UP: {
                 newTileX = last.tileX;
-                newTileY = last.tileY - 1;
+                newTileY = last.tileY + 1;
                 break;
             }
             case DOWN: {
                 newTileX = last.tileX;
-                newTileY = last.tileY + 1;
+                newTileY = last.tileY - 1;
                 break;
             }
             case RIGHT: {
