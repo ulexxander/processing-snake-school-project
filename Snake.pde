@@ -7,7 +7,7 @@ void setup() {
 }
 
 void draw() {
-    print(width);
+    
     game.update();
     game.render();
 }
