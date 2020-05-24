@@ -3,15 +3,7 @@ public class Player {
     private BodyPart head;
 
     public Player() {
-        bodyParts.add(new BodyPart(width / 2, height / 2));
+        bodyParts.add(new BodyPart(Game.hTiles / 2, Game.vTiles / 2));
         head = bodyParts.get(0);
-    }
-
-    public void drawParts() {
-
-    }
-
-    public void checkCollision() {
-        
     }
 }
