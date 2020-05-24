@@ -1,8 +1,8 @@
-public class Game extends Render {
-    private static final int width = 640;
-    private static final int height = 480;
+public class Game {
+    private static final int width = 600;
+    private static final int height = 450;
     
-    private static final int tileSize = 20;
+    private static final int tileSize = 15;
     
     private static final int hTiles = width / tileSize;
     private static final int vTiles = height / tileSize;
@@ -19,10 +19,6 @@ public class Game extends Render {
     public void update() {
         //checkCollision();
 
-        // dummy
-        if(frameCount % 60 == 0) {
-            render.addDrawable(player.addBodyPart());
-        }
     }
 
     public void render() {

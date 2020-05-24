@@ -6,7 +6,6 @@ public class Render {
     public void render() {
         //System.out.println("Elements to draw: " + toDraw.size() + "\n");
         for(Drawable drawable : toDraw) {
-            
             drawable.draw();
         }
     }
