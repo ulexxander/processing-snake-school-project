@@ -33,12 +33,16 @@ public class Player {
     }
 
     public BodyPart addBodyPart() {
+        if(direction == Direction.UNSET) return null;
         BodyPart last = bodyParts.get(bodyParts.size() - 1);
         int newTileX = 0;
         int newTileY = 0;
-        prevDirections.add(direction);
 
-        switch(direction) {
+        Direction newDirect = prevDirections.size() > 0 ? prevDirections.getLast() : direction;
+
+        prevDirections.addFirst(newDirect);
+
+        switch(newDirect) {
             case UP: {
                 newTileX = last.tileX;
                 newTileY = last.tileY + 1;

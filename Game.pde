@@ -13,24 +13,15 @@ public class Game {
 
     public Game() {
         System.out.println("Game started!\n");
-
         render.addDrawable(player.head);
-        //dummy
-        player.direction = Direction.LEFT;
-        render.addDrawable(player.addBodyPart());
-        render.addDrawable(player.addBodyPart());
-        render.addDrawable(player.addBodyPart());
-        render.addDrawable(player.addBodyPart());
-        player.direction = Direction.UNSET;
     }
 
     public void update() {
-
         //dummy
-        // if(frameCount % 120 == 0) {
-        //     BodyPart toAdd = player.addBodyPart();
-        //     if(toAdd != null) render.addDrawable(toAdd);
-        // }
+        if(frameCount % 120 == 0) {
+            BodyPart toAdd = player.addBodyPart();
+            if(toAdd != null) render.addDrawable(toAdd);
+        }
         player.moveDirectional();
     }
 

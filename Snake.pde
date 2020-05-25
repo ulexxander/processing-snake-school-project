@@ -9,7 +9,7 @@ void setup() {
 
 void draw() {
     clear();
-    // testing stuff
+    // for developing:
     fill(0,0,0);
     stroke(50,50,50);
     for(int x = 0; x < 600; x += 15) {
