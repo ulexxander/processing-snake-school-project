@@ -27,17 +27,6 @@ public class Color {
         return toReturn;
     }
 
-    public int[] getColorRGB_test() {
-        int[] toReturn = new int[3];
-        toReturn[0] = red;
-        toReturn[1] = green;
-        toReturn[2] = blue;
-        System.out.println(toReturn[0]);
-        System.out.println(toReturn[1]);
-        System.out.println(toReturn[2]);
-        return toReturn;
-    }
-
     public void setColor(int val) {
         colorValue = val;
         red = val & 0xFF0000;
