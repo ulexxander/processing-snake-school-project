@@ -1,16 +1,27 @@
 import java.util.*;
 
 public class Render {
-    private List<Drawable> toDraw = new LinkedList();
+    private LinkedList<Drawable> toDraw = new LinkedList();
+    private int toRemoveIndex = -1;
 
     public void render() {
-        //System.out.println("Elements to draw: " + toDraw.size() + "\n");
-        for(Drawable drawable : toDraw) {
-            drawable.draw();
+        ListIterator<Drawable> iterator = toDraw.listIterator();
+        while(iterator.hasNext()) {
+            Drawable current = iterator.next();
+            current.draw();
+            if(toRemoveIndex != -1) {
+                toDraw.remove(toRemoveIndex);
+                toRemoveIndex = -1;
+                return;
+            }
         }
     }
 
     public void addDrawable(Drawable toAdd) {
         toDraw.add(toAdd);
+    }
+
+    public void removeDrawable(int index) {
+        toRemoveIndex = index;
     }
 }

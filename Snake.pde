@@ -1,7 +1,7 @@
 Game game;
 
 void setup() {
-    size(600, 450);
+    size(450, 300);
     background(0, 0, 0);
     game = new Game();
 
@@ -20,7 +20,7 @@ void draw() {
 
     noStroke();
     fill(255,255,255);
-    if(frameCount % 30 == 0) {
+    if(frameCount % 5 == 0) {
         game.update();
     }
     game.render();

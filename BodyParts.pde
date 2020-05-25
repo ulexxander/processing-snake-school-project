@@ -1,5 +1,6 @@
 public class BodyPart extends Drawable {
     public BodyPart(int x, int y) {
+        tileColor = new Color(0, 255, 0);
         tileX = x;
         tileY = y;
     }

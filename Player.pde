@@ -29,7 +29,6 @@ public class Player {
         moveBody();
 
         prevDirections.removeFirst();
-        System.out.println("Directions: " + prevDirections.size());
     }
 
     public BodyPart addBodyPart() {
