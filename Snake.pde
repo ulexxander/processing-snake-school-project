@@ -11,7 +11,7 @@ void draw() {
     clear();
     // for developing:
     fill(0,0,0);
-    stroke(50,50,50);
+    stroke(30,30,30);
     for(int x = 0; x < 600; x += 15) {
         for(int y = 0; y < 450; y += 15) {
             rect(x, y, 15, 15);

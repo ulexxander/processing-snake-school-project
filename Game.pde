@@ -11,6 +11,8 @@ public class Game {
     private Render render = new Render();
     public Controller controller = new Controller(player);
 
+    private int applesCount;
+
     private boolean theEnd;
 
     public Game() {
@@ -50,7 +52,9 @@ public class Game {
     }
 
     public void spawnApple() {
+        if(applesCount > 5) return;
         render.addDrawable(new Apple());
+        applesCount++;
     }
 
     public void checkCollision() {    
@@ -66,6 +70,7 @@ public class Game {
                 if(current instanceof Apple) {
                     render.addDrawable(player.addBodyPart());
                     render.removeDrawable(index);
+                    applesCount--;
                     return;
                 }
                 if(current instanceof BodyPart) {
