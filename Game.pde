@@ -26,7 +26,7 @@ public class Game {
     public void update() {
         if(!theEnd) {
             checkCollision();
-            if(frameCount % 120 == 0) {
+            if(frameCount % 90 == 0) {
                 spawnApple();
             }
             player.moveDirectional();
