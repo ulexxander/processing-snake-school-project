@@ -1,9 +1,12 @@
+import java.util.*;
+
 enum Direction {
-    UP, DOWN, RIGHT, LEFT
+    UP, DOWN, RIGHT, LEFT, UNSET
 }
 
 public class Player {
     private ArrayList<BodyPart> bodyParts = new ArrayList<BodyPart>();
+    private LinkedList<Direction> prevDirections = new LinkedList<Direction>();
     private BodyPart head;
 
     private Direction direction;
@@ -11,18 +14,29 @@ public class Player {
     public Player() {
         bodyParts.add(new BodyPart(Game.hTiles / 2, Game.vTiles / 2));
         head = bodyParts.get(0);
-        //dummy
-        direction = Direction.DOWN;
+        direction = Direction.UNSET;
     }
 
+    private void moveBody() {
+        for(int i = 0; i < bodyParts.size(); i++) {
+            bodyParts.get(i).moveRelative(prevDirections.get(prevDirections.size() - i - 1));
+        }
+    }
+    
     public void moveDirectional() {
+        if(direction == Direction.UNSET) return;
+        prevDirections.add(direction);
+        moveBody();
 
+        prevDirections.removeFirst();
+        System.out.println("Directions: " + prevDirections.size());
     }
 
     public BodyPart addBodyPart() {
         BodyPart last = bodyParts.get(bodyParts.size() - 1);
         int newTileX = 0;
         int newTileY = 0;
+        prevDirections.add(direction);
 
         switch(direction) {
             case UP: {
@@ -44,6 +58,9 @@ public class Player {
                 newTileX = last.tileX + 1;
                 newTileY = last.tileY;
                 break;
+            }
+            case UNSET: {
+                return null;
             }
         }
 
